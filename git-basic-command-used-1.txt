@@ -9,6 +9,7 @@ $ git config --global user.name Harendra
 harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
 $ git config  -global user.name
 error: did you mean `--global` (with two dashes)?
+============
 
 harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
 $ git config  --global user.name
