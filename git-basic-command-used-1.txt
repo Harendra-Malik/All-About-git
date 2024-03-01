@@ -1,0 +1,167 @@
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git config -global user.name Harendra
+error: did you mean `--global` (with two dashes)?
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git config --global user.name Harendra
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git config  -global user.name
+error: did you mean `--global` (with two dashes)?
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git config  --global user.name
+Harendra
+==========
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ code .
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ ls -lart
+total 32
+drwxr-xr-x 1 harendra 197121 0 Mar  1 10:46 ./
+drwxr-xr-x 1 harendra 197121 0 Mar  1 10:46 ../
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git
+$ git init
+Initialized empty Git repository in C:/Users/harendra/Desktop/All-about-git/.git/
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ ls -lart
+total 36
+drwxr-xr-x 1 harendra 197121 0 Mar  1 10:46 ../
+drwxr-xr-x 1 harendra 197121 0 Mar  1 10:55 ./
+drwxr-xr-x 1 harendra 197121 0 Mar  1 10:55 .git/
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ touch about.html
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ touch news.html
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ code .
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        news.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git add about.html
+warning: in the working copy of 'about.html', CRLF will be replaced by LF the next time Git touches it
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   about.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        news.html
+
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git add -A
+warning: in the working copy of 'news.html', CRLF will be replaced by LF the next time Git touches it
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   about.html
+        new file:   news.html
+
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git commit -m "The first commit"
+[master (root-commit) 62741f0] The first commit
+ 2 files changed, 22 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 news.html
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git checkout about.html
+Updated 1 path from the index
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git checkout --f
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git log
+commit 62741f07d5dcd82149e3802623d8f3e5c59b2472 (HEAD -> master)
+Author: Harendra <harendra.malik@gmail.com>
+Date:   Fri Mar 1 11:05:16 2024 +0530
+
+    The first commit
+
+harendra@HarendraSingh MINGW64 ~/Desktop/All-about-git (master)
+$ git log -p -1
+commit 62741f07d5dcd82149e3802623d8f3e5c59b2472 (HEAD -> master)
+Author: Harendra <harendra.malik@gmail.com>
+Date:   Fri Mar 1 11:05:16 2024 +0530
+
+    The first commit
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..94324da
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1,11 @@
++<html>
++
++<head>
++
++</head>
++
++   <body>
++    About  file
++   </body>
++
++</html>
+\ No newline at end of file
+diff --git a/news.html b/news.html
+new file mode 100644
+index 0000000..5ea05cc
+--- /dev/null
++++ b/news.html
